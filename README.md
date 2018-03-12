@@ -35,7 +35,7 @@ You can build the project with the `parcel` command. You can also use the NPM sc
 
 ## Demo
 
-[Check out the live demo of AtlasParcel.](http://festive-pasteur-7b6e4e.netlify.com).
+[Check out the live demo of AtlasParcel.](http://festive-pasteur-7b6e4e.netlify.com)
 
 
 ## How To Contribute
