@@ -1,0 +1,20 @@
+# dependency cache
+node_modules
+.cache
+
+# build
+dist/
+.netlify
+
+# logs
+npm-debug.log
+
+# editor config
+.idea
+*.iml
+
+# OS files
+*.DS_Store
+
+# Tern
+.tern-port
