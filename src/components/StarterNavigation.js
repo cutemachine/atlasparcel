@@ -13,7 +13,7 @@ import SearchIcon from '@atlaskit/icon/glyph/search'
 import CreateIcon from '@atlaskit/icon/glyph/add'
 import AtlassianIcon from '@atlaskit/icon/glyph/atlassian'
 import ArrowleftIcon from '@atlaskit/icon/glyph/arrow-left'
-import ComponentIcon from '@atlaskit/icon/glyph/component';
+import ComponentIcon from '@atlaskit/icon/glyph/component'
 
 import CreateDrawer from '../components/CreateDrawer'
 import SearchDrawer from '../components/SearchDrawer'
