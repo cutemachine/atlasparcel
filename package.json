@@ -18,7 +18,7 @@
   "author": "cutemachine",
   "license": "ISC",
   "dependencies": {
-    "@atlaskit/avatar": "^9.0.4",
+    "@atlaskit/avatar": "^9.2.1",
     "@atlaskit/button": "^6.4.2",
     "@atlaskit/css-reset": "^1.2.2",
     "@atlaskit/dropdown-menu": "^3.11.10",

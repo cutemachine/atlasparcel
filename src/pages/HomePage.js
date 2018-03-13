@@ -12,7 +12,7 @@ export default class HomePage extends Component {
     onConfirm: PropTypes.func,
     onCancel: PropTypes.func,
     onClose: PropTypes.func
-  };
+  }
 
   render () {
     return (
