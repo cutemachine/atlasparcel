@@ -44,6 +44,8 @@ export default class CommandsPage extends Component {
               <Button appearance='link'>Link</Button>
             </GridColumn>
           </Grid>
+          <ComponentTitle>More Atlas Components</ComponentTitle>
+          <p>You can find all components included in Atlaskit on the <a href='http://atlaskit.atlassian.com/packages'>packages page</a>.</p>
         </Page>
       </ContentWrapper>
     )
