@@ -11,17 +11,18 @@ export default class App extends Component {
   state = {
     flags: [],
     isModalOpen: false
-  };
+  }
 
   static contextTypes = {
     navOpenState: PropTypes.object,
-    router: PropTypes.object
-  };
+    children: PropTypes.node
+  }
 
   static propTypes = {
     navOpenState: PropTypes.object,
+    location: PropTypes.object,
     onNavResize: PropTypes.func
-  };
+  }
 
   static childContextTypes = {
     showModal: PropTypes.func,
@@ -58,7 +59,7 @@ export default class App extends Component {
       <div>
         <Page
           navigationWidth={this.context.navOpenState.width}
-          navigation={<StarterNavigation />}
+          navigation={<StarterNavigation location={this.props.location} />}
         >
           {this.props.children}
         </Page>

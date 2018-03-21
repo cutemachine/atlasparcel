@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import Nav, {
   AkContainerTitle,
   AkCreateDrawer,
@@ -33,6 +33,10 @@ export default class StarterNavigation extends React.Component {
     router: PropTypes.object
   }
 
+  static propTypes = {
+    location: PropTypes.object
+  }
+
   openDrawer = (openDrawer) => {
     this.setState({ openDrawer })
   }
@@ -44,6 +48,7 @@ export default class StarterNavigation extends React.Component {
   render () {
     const backIcon = <ArrowleftIcon label='Back icon' size='medium' />
     const globalPrimaryIcon = <AtlassianIcon label='Atlassian icon' size='xlarge' />
+    console.log(this.props)
 
     return (
       <Nav
@@ -102,7 +107,7 @@ export default class StarterNavigation extends React.Component {
                 <AkNavigationItem
                   icon={<Icon label={title} size='medium' />}
                   text={title}
-                  isSelected={this.context.router.isActive(url, true)}
+                  isSelected={this.props.location.pathname === url}
                 />
               </Link>
             )
