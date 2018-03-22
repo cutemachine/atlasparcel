@@ -4,19 +4,16 @@ import { Link } from 'react-router-dom'
 import Nav, {
   AkContainerTitle,
   AkCreateDrawer,
-  AkNavigationItem,
-  AkSearchDrawer
+  AkNavigationItem
 } from '@atlaskit/navigation'
 import DashboardIcon from '@atlaskit/icon/glyph/dashboard'
 import GearIcon from '@atlaskit/icon/glyph/settings'
-import SearchIcon from '@atlaskit/icon/glyph/search'
 import CreateIcon from '@atlaskit/icon/glyph/add'
 import AtlassianIcon from '@atlaskit/icon/glyph/atlassian'
 import ArrowleftIcon from '@atlaskit/icon/glyph/arrow-left'
 import ComponentIcon from '@atlaskit/icon/glyph/component'
 
 import CreateDrawer from '../components/CreateDrawer'
-import SearchDrawer from '../components/SearchDrawer'
 import atlaskitLogo from '../images/atlaskit.png'
 
 export default class StarterNavigation extends React.Component {
@@ -65,23 +62,8 @@ export default class StarterNavigation extends React.Component {
         )}
         globalPrimaryIcon={globalPrimaryIcon}
         globalPrimaryItemHref='/'
-        globalSearchIcon={<SearchIcon label='Search icon' />}
         hasBlanket
         drawers={[
-          <AkSearchDrawer
-            backIcon={backIcon}
-            isOpen={this.state.openDrawer === 'search'}
-            key='search'
-            onBackButton={() => this.openDrawer(null)}
-            primaryIcon={globalPrimaryIcon}
-          >
-            <SearchDrawer
-              onResultClicked={() => this.openDrawer(null)}
-              onSearchInputRef={(ref) => {
-                this.searchInputRef = ref
-              }}
-            />
-          </AkSearchDrawer>,
           <AkCreateDrawer
             backIcon={backIcon}
             isOpen={this.state.openDrawer === 'create'}
@@ -95,7 +77,6 @@ export default class StarterNavigation extends React.Component {
           </AkCreateDrawer>
         ]}
         globalCreateIcon={<CreateIcon label='Create icon' />}
-        onSearchDrawerOpen={() => this.openDrawer('search')}
         onCreateDrawerOpen={() => this.openDrawer('create')}
       >
         {
