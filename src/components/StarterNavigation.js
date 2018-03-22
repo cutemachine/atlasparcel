@@ -48,7 +48,6 @@ export default class StarterNavigation extends React.Component {
   render () {
     const backIcon = <ArrowleftIcon label='Back icon' size='medium' />
     const globalPrimaryIcon = <AtlassianIcon label='Atlassian icon' size='xlarge' />
-    console.log(this.props)
 
     return (
       <Nav

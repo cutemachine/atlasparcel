@@ -1,9 +1,13 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
+import { Route } from 'react-router-dom'
 import Flag, { FlagGroup } from '@atlaskit/flag'
 import Modal from '@atlaskit/modal-dialog'
 import Page from '@atlaskit/page'
 import '@atlaskit/css-reset'
+import HomePage from '../pages/HomePage'
+import CommandsPage from '../pages/CommandsPage'
+import ComponentsPage from '../pages/ComponentsPage'
 
 import StarterNavigation from '../components/StarterNavigation'
 
@@ -61,7 +65,9 @@ export default class App extends Component {
           navigationWidth={this.context.navOpenState.width}
           navigation={<StarterNavigation location={this.props.location} />}
         >
-          {this.props.children}
+          <Route exact path='/' component={HomePage} />
+          <Route path='/commands' component={CommandsPage} />
+          <Route path='/components' component={ComponentsPage} />
         </Page>
         <div>
           <FlagGroup onDismissed={this.onFlagDismissed}>
