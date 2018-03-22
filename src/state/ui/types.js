@@ -5,7 +5,11 @@
 // Think what was the effect?
 
 const SHOW_MODAL = 'ui/SHOW_MODAL'
+const ADD_FLAG = 'ui/ADD_FLAG'
+const DELETE_FLAG = 'ui/DELETE_FLAG'
 
 export default {
-  SHOW_MODAL
+  SHOW_MODAL,
+  ADD_FLAG,
+  DELETE_FLAG
 }

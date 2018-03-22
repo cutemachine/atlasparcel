@@ -1,9 +1,13 @@
 import actions from './actions'
 
 const {
-  showModal
+  showModal,
+  addFlag,
+  deleteFlag
 } = actions
 
 export default {
-  showModal
+  showModal,
+  addFlag,
+  deleteFlag
 }

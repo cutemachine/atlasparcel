@@ -14,10 +14,6 @@ import { uiOperations } from './state/ui'
 import '@atlaskit/css-reset'
 
 class App extends Component {
-  state = {
-    flags: []
-  }
-
   static contextTypes = {
     navOpenState: PropTypes.object,
     children: PropTypes.node
@@ -28,31 +24,17 @@ class App extends Component {
     location: PropTypes.object,
     onNavResize: PropTypes.func,
     showModal: PropTypes.func,
-    isModalOpen: PropTypes.bool
-  }
-
-  static childContextTypes = {
-    addFlag: PropTypes.func
-  }
-
-  getChildContext () {
-    return {
-      addFlag: this.addFlag
-    }
+    isModalOpen: PropTypes.bool,
+    flags: PropTypes.array,
+    deleteFlag: PropTypes.func
   }
 
   hideModal = () => {
     this.props.showModal(false)
   }
 
-  addFlag = () => {
-    this.setState({ flags: [{ id: Date.now() }].concat(this.state.flags) })
-  }
-
   onFlagDismissed = (dismissedFlagId) => {
-    this.setState({
-      flags: this.state.flags.filter(flag => flag.id !== dismissedFlagId)
-    })
+    this.props.deleteFlag(dismissedFlagId)
   }
 
   render () {
@@ -69,12 +51,12 @@ class App extends Component {
         <div>
           <FlagGroup onDismissed={this.onFlagDismissed}>
             {
-              this.state.flags.map(flag => (
+              this.props.flags.map(flag => (
                 <Flag
                   id={flag.id}
                   key={flag.id}
-                  title='AtlasParcel'
-                  description='… loves you'
+                  title={flag.title}
+                  description={flag.description}
                 />
               ))
             }
@@ -99,13 +81,15 @@ class App extends Component {
 }
 
 const mapDispatchToProps = {
-  showModal: uiOperations.showModal
+  showModal: uiOperations.showModal,
+  deleteFlag: uiOperations.deleteFlag
 }
 
 const mapStateToProps = (state) => {
   const isModalOpen = selectors.selectIsModalOpen(state)
+  const flags = selectors.selectFlags(state)
 
-  return { isModalOpen }
+  return { isModalOpen, flags }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
