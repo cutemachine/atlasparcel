@@ -4,8 +4,8 @@
 // describe a change that has happend and name accordingly
 // Think what was the effect?
 
-const WELCOME_TEXT_CHANGED = 'ui/WELCOME_TEXT_CHANGED'
+const SHOW_MODAL = 'ui/SHOW_MODAL'
 
 export default {
-  WELCOME_TEXT_CHANGED
+  SHOW_MODAL
 }

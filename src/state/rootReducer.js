@@ -13,5 +13,5 @@ export default rootReducer
 // Selector names should start with 'select'.
 export const selectors = {
   // UI state
-  selectWelcomeText: state => uiSelectors.selectWelcomeText(state.ui)
+  selectIsModalOpen: state => uiSelectors.selectIsModalOpen(state.ui)
 }

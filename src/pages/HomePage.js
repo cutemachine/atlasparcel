@@ -1,17 +1,19 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Button, { ButtonGroup } from '@atlaskit/button'
 import MainSection from '../components/MainSection'
 import ContentWrapper from '../components/ContentWrapper'
 import PageTitle from '../components/PageTitle'
+import { uiOperations } from '../state/ui'
 
-export default class HomePage extends Component {
+class HomePage extends Component {
+  static propTypes = {
+    showModal: PropTypes.func
+  }
+
   static contextTypes = {
-    showModal: PropTypes.func,
-    addFlag: PropTypes.func,
-    onConfirm: PropTypes.func,
-    onCancel: PropTypes.func,
-    onClose: PropTypes.func
+    addFlag: PropTypes.func
   }
 
   render () {
@@ -22,7 +24,7 @@ export default class HomePage extends Component {
         <ButtonGroup>
           <Button
             appearance='primary'
-            onClick={this.context.showModal}
+            onClick={() => this.props.showModal(true)}
             onClose={() => { }}
           >Click to view Atlaskit modal</Button>
           <Button onClick={this.context.addFlag}>Click to view Atlaskit flag</Button>
@@ -31,3 +33,9 @@ export default class HomePage extends Component {
     )
   }
 }
+
+const mapDispatchToProps = {
+  showModal: uiOperations.showModal
+}
+
+export default connect(null, mapDispatchToProps)(HomePage)

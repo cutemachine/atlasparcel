@@ -1,3 +1,3 @@
 export default {
-  selectWelcomeText: state => state.text
+  selectIsModalOpen: state => state.isModalOpen
 }

@@ -1,7 +1,9 @@
 import actions from './actions'
 
-const { welcomeTextChanged } = actions
+const {
+  showModal
+} = actions
 
 export default {
-  welcomeTextChanged
+  showModal
 }

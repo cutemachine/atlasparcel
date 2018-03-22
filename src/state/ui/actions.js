@@ -1,10 +1,10 @@
 import types from './types'
 
-const welcomeTextChanged = text => ({
-  type: types.WELCOME_TEXT_CHANGED,
-  payload: text
+const showModal = isOpen => ({
+  type: types.SHOW_MODAL,
+  payload: isOpen
 })
 
 export default {
-  welcomeTextChanged
+  showModal
 }
