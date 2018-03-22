@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import { Route } from 'react-router'
 import Flag, { FlagGroup } from '@atlaskit/flag'
 import Modal from '@atlaskit/modal-dialog'
 import Page from '@atlaskit/page'

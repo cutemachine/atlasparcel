@@ -1,7 +1,17 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { Route } from 'react-router'
 import App from './App'
+import { Provider } from 'react-redux'
+import { ConnectedRouter } from 'react-router-redux'
+import configureStore from './state/store'
+
+import createHistory from 'history/createBrowserHistory'
+
+const history = createHistory()
+
+const initialState = {}
+const store = configureStore(initialState, history)
 
 export default class MainRouter extends Component {
   constructor () {
@@ -35,9 +45,11 @@ export default class MainRouter extends Component {
 
   render () {
     return (
-      <BrowserRouter>
-        <Route component={this.appWithPersistentNav()} />
-      </BrowserRouter>
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <Route component={this.appWithPersistentNav()} />
+        </ConnectedRouter>
+      </Provider>
     )
   }
 }

@@ -3,7 +3,7 @@ import { routerReducer } from 'react-router-redux'
 import uiReducer, { uiSelectors } from './ui'
 
 const rootReducer = combineReducers({
-  routing: routerReducer,
+  router: routerReducer,
   ui: uiReducer
 })
 
