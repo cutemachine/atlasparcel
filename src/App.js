@@ -4,12 +4,11 @@ import { Route } from 'react-router-dom'
 import Flag, { FlagGroup } from '@atlaskit/flag'
 import Modal from '@atlaskit/modal-dialog'
 import Page from '@atlaskit/page'
+import HomePage from './pages/HomePage'
+import CommandsPage from './pages/CommandsPage'
+import ComponentsPage from './pages/ComponentsPage'
+import StarterNavigation from './components/StarterNavigation'
 import '@atlaskit/css-reset'
-import HomePage from '../pages/HomePage'
-import CommandsPage from '../pages/CommandsPage'
-import ComponentsPage from '../pages/ComponentsPage'
-
-import StarterNavigation from '../components/StarterNavigation'
 
 export default class App extends Component {
   state = {
