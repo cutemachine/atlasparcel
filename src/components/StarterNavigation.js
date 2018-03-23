@@ -48,6 +48,7 @@ export default class StarterNavigation extends React.Component {
 
     return (
       <Nav
+        isCollapsible={true}
         isOpen={this.context.navOpenState.isOpen}
         width={this.context.navOpenState.width}
         onResize={this.props.onNavResize}
