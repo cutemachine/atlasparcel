@@ -11,6 +11,7 @@ This is a basic React app which includes some [Atlaskit](https://atlaskit.atlass
 - [React—A JavaScript library for building user interfaces](https://reactjs.org/)
 - [Atlaskit—Atlassian's official UI library](https://atlaskit.atlassian.com/)
 - [Parcel—Blazing fast, zero configuration web application bundler](https://parceljs.org)
+- [Redux—Predictable state container for JavaScript apps](https://redux.js.org/)
 
 
 ## Getting Started
