@@ -8,6 +8,7 @@ import Page from '@atlaskit/page'
 import HomePage from './pages/HomePage'
 import CommandsPage from './pages/CommandsPage'
 import ComponentsPage from './pages/ComponentsPage'
+import ReduxPage from './pages/ReduxPage'
 import StarterNavigation from './components/StarterNavigation'
 import { selectors } from './state/rootReducer'
 import { uiOperations } from './state/ui'
@@ -47,6 +48,7 @@ class App extends Component {
           <Route exact path='/' component={HomePage} />
           <Route path='/commands' component={CommandsPage} />
           <Route path='/components' component={ComponentsPage} />
+          <Route path='/redux' component={ReduxPage} />
         </Page>
         <div>
           <FlagGroup onDismissed={this.onFlagDismissed}>

@@ -21,7 +21,8 @@ export default class StarterNavigation extends React.Component {
     navLinks: [
       ['/', 'Home', DashboardIcon],
       ['/commands', 'Commands', GearIcon],
-      ['/components', 'Components', ComponentIcon]
+      ['/components', 'Components', ComponentIcon],
+      ['/redux', 'Redux', ComponentIcon]
     ]
   }
 
