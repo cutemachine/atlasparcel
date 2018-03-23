@@ -1,10 +1,17 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import { Router, Route, browserHistory } from 'react-router'
+import { Route } from 'react-router'
 import App from './App'
-import HomePage from '../pages/HomePage'
-import CommandsPage from '../pages/CommandsPage'
-import ComponentsPage from '../pages/ComponentsPage'
+import { Provider } from 'react-redux'
+import { ConnectedRouter } from 'react-router-redux'
+import configureStore from './state/store'
+
+import createHistory from 'history/createBrowserHistory'
+
+const history = createHistory()
+
+const initialState = {}
+const store = configureStore(initialState, history)
 
 export default class MainRouter extends Component {
   constructor () {
@@ -38,13 +45,11 @@ export default class MainRouter extends Component {
 
   render () {
     return (
-      <Router history={browserHistory}>
-        <Route component={this.appWithPersistentNav()}>
-          <Route path='/' component={HomePage} />
-          <Route path='/commands' component={CommandsPage} />
-          <Route path='/components' component={ComponentsPage} />
-        </Route>
-      </Router>
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <Route component={this.appWithPersistentNav()} />
+        </ConnectedRouter>
+      </Provider>
     )
   }
 }
