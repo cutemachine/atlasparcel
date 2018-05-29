@@ -43,7 +43,7 @@ class App extends Component {
       <div>
         <Page
           navigationWidth={this.context.navOpenState.width}
-          navigation={<StarterNavigation location={this.props.location} />}
+          navigation={<StarterNavigation onNavResize={this.props.onNavResize} location={this.props.location} />}
         >
           <Route exact path='/' component={HomePage} />
           <Route path='/commands' component={CommandsPage} />
